@@ -1,0 +1,55 @@
+﻿@page
+@model ziibdApp.Pages.Location.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Locations</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Locations.LocationId" />
+            <div class="form-group">
+                <label asp-for="Locations.StreetAddress" class="control-label"></label>
+                <input asp-for="Locations.StreetAddress" class="form-control" />
+                <span asp-validation-for="Locations.StreetAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Locations.PostalCode" class="control-label"></label>
+                <input asp-for="Locations.PostalCode" class="form-control" />
+                <span asp-validation-for="Locations.PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Locations.City" class="control-label"></label>
+                <input asp-for="Locations.City" class="form-control" />
+                <span asp-validation-for="Locations.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Locations.StateProvince" class="control-label"></label>
+                <input asp-for="Locations.StateProvince" class="form-control" />
+                <span asp-validation-for="Locations.StateProvince" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Locations.CountryId" class="control-label"></label>
+                <select asp-for="Locations.CountryId" class="form-control" asp-items="ViewBag.CountryId"></select>
+                <span asp-validation-for="Locations.CountryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

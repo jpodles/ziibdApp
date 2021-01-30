@@ -1,0 +1,49 @@
+﻿@page
+@model ziibdApp.Pages.Job.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Jobs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Jobs.JobId" class="control-label"></label>
+                <input asp-for="Jobs.JobId" class="form-control" />
+                <span asp-validation-for="Jobs.JobId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jobs.JobTitle" class="control-label"></label>
+                <input asp-for="Jobs.JobTitle" class="form-control" />
+                <span asp-validation-for="Jobs.JobTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jobs.MinSalary" class="control-label"></label>
+                <input asp-for="Jobs.MinSalary" class="form-control" />
+                <span asp-validation-for="Jobs.MinSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jobs.MaxSalary" class="control-label"></label>
+                <input asp-for="Jobs.MaxSalary" class="form-control" />
+                <span asp-validation-for="Jobs.MaxSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

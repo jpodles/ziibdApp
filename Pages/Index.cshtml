@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "HR";
+}
+
+<div class="text-center ">
+    <h1 class="display-2 text-dark">PRACOWNICY ZIIBD</h1>
+    <br />
+    <div class="container table-dark">
+        <div class="row ">
+            <div class="col-sm m-5 border border-light ">
+                <h3>Zatrudnieni pracownicy</h3>
+                <h4>@Html.DisplayFor(model => model.EmployeesCount)</h4>
+            </div>
+            <div class="col-sm m-5 border border-light">
+                <h3> Liczba departemantów</h3>
+                <h4>@Html.DisplayFor(model => model.DepartmentCount)</h4>
+            </div>
+            <div class="col-sm m-5 border border-light">
+                <h3> Liczba stanowisk</h3>
+                <h4> @Html.DisplayFor(model => model.JobsCount)</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm m-5 border border-light">
+                <h3>Liczba krajów</h3>
+                <h4> @Html.DisplayFor(model => model.CountriesCount)</h4>
+            </div>
+            <div class="col-sm m-5 border border-light">
+                <h3>Liczba placówek firmy</h3>
+                <h4>@Html.DisplayFor(model => model.LocationsCount)</h4>
+            </div>
+            <div class="col-sm m-5 border border-light">
+                <h3>Liczba regionów</h3>
+                <h4> @Html.DisplayFor(model => model.RegionsCount)</h4>
+            </div>
+        </div>
+    </div>

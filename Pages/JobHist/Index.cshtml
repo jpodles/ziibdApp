@@ -1,0 +1,55 @@
+﻿@page
+@model ziibdApp.Pages.JobHist.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Historia Pracy</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Dodaj Job Hist</a>
+</p>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JobHistory[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobHistory[0].Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobHistory[0].Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobHistory[0].Job)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.JobHistory)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Job.JobId)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.EmployeeId" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Details" asp-route-id="@item.EmployeeId" class="btn btn-light">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@item.EmployeeId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

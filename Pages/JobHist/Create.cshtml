@@ -1,0 +1,51 @@
+﻿@page
+@model ziibdApp.Pages.JobHist.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>JobHistory</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="JobHistory.EmployeeId" class="control-label"></label>
+                <select asp-for="JobHistory.EmployeeId" class ="form-control" asp-items="ViewBag.EmployeeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobHistory.StartDate" class="control-label"></label>
+                <input asp-for="JobHistory.StartDate" class="form-control" />
+                <span asp-validation-for="JobHistory.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobHistory.EndDate" class="control-label"></label>
+                <input asp-for="JobHistory.EndDate" class="form-control" />
+                <span asp-validation-for="JobHistory.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobHistory.JobId" class="control-label"></label>
+                <select asp-for="JobHistory.JobId" class ="form-control" asp-items="ViewBag.JobId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobHistory.DepartmentId" class="control-label"></label>
+                <select asp-for="JobHistory.DepartmentId" class ="form-control" asp-items="ViewBag.DepartmentId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
