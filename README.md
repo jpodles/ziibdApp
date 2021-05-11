@@ -4,4 +4,4 @@ Final Project for Information and database management
 - ASP.NET Core MVC 5
 - Razor Pages
 - Entity Framework Core
-- MSSQL Server
+
